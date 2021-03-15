@@ -24,9 +24,12 @@
 name: CICD-Pipeline-to-GKE
 on:
   push:
-    branches: [ main ]
+    branches: 
+    -  main
   pull_request:
-    branches: [ main ]
+    branches:
+    -  main
+    
 # on:
 #   release:
 #     types: [created]
