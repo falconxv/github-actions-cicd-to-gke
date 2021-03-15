@@ -7,6 +7,12 @@
 # Made by Sergii Sokolov Copyleft (c) 2021
 #---------------------------------------------------------------------
 name: CICD-Pipeline-to-GKE
+env:
+  DOCKER_IMAGE_NAME         : "falkonz/web-app:{{ github.sha }}"
+  APPLICATION_NAME          : "WebApp"
+  ENVIRONMENT_NAME          : "WebApp-env"
+  DEPLOY_PACKAGE_NAME       : "web_app_${{ github.sha }}"
+  GCP_REGION_NAME           : "us-west1-a"
 
 on: 
   push:
@@ -18,7 +24,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
+    - name: Git clone our repo
+      uses: actions/checkout@v1
+      
+    - name: List files
+      run : ls -a
 
 
   cd:
@@ -26,4 +36,6 @@ jobs:
     needs: [ci]
 
     steps:
+    - name: Print Happy Message for CD finish
+      run : echo "CD Pipeline finished successfully!"
    
