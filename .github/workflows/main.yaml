@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Git clone our repo
+    - name: Git clone repo
       uses: action/checkout@v1
        
       
