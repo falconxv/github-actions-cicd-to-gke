@@ -25,7 +25,8 @@ jobs:
 
     steps:
     - name: Git clone our repo
-      uses: actions/checkout@v1
+      uses: action/checkout@v1
+       
       
     - name: List files
       run : ls -a
