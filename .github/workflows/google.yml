@@ -11,10 +11,14 @@
 # For more support on how to run the workflow, please visit https://github.com/google-github-actions/setup-gcloud/tree/master/example-workflows/gke
 
 name: github-actions-cicd-to-gke
-
 on:
-  release:
-    types: [created]
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+# on:
+#   release:
+#     types: [created]
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
