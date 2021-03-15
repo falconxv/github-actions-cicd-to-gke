@@ -2,7 +2,7 @@
 
 
 Status of Last Deployment:<br>
-<img src="https://github.com/falkonz/github-actions-cicd-to-gke/workflows/CICD-Pipeline-to-GKE/badge.svg?branch=master"><br>
+[![CICD-Pipeline-to-GKE](https://github.com/falkonz/github-actions-cicd-to-gke/actions/workflows/google.yml/badge.svg)](https://github.com/falkonz/github-actions-cicd-to-gke/actions/workflows/google.yml)
 
 
 Copyleft by Sergii Sokolov 2021.
