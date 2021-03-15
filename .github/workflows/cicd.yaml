@@ -14,10 +14,13 @@ env:
   DEPLOY_PACKAGE_NAME       : "web_app_${{ github.sha }}"
   GCP_REGION_NAME           : "us-west1-a"
 
-on: 
+on:
   push:
-    branches: 
-      - main
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '* */6 * * *
 
 jobs:
   ci:
@@ -26,10 +29,6 @@ jobs:
     steps:
     - name: Git clone repo
       uses: action/checkout@v1
-       
-      
-    - name: List files
-      run : ls -a
 
 
   cd:
