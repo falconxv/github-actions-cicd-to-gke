@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: falcon-project-deployment-autoscaling
+  name: falcon-project-deployment
   labels:
     app  : falcon-k8s-application 
 spec:
   selector:
     matchLabels:
-      project: falcon-project-autoscaling
+      project: falcon-project
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -16,10 +16,10 @@ spec:
   template:
     metadata:
       labels:
-        project: falkon-project-autoscaling
+        project: falkon-project
     spec:
       containers:
-        - name : falkon-project-webapp-autoscaling
+        - name : falkon-project-webapp
           image: gcr.io/PROJECT_ID/IMAGE:TAG
           ports:
             - containerPort: 80
@@ -38,7 +38,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v2beta2v2
     kind: Deployment
-    name: falkon-project-deployment-autoscaling
+    name: falkon-project-deployment
   minReplicas: 2
   maxReplicas: 6
   metrics:
