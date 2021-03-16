@@ -7,6 +7,7 @@
 # Made by Sergii Sokolov Copyleft (c) 2021
 #---------------------------------------------------------------------
 
+
 # This workflow will build a docker container, publish it to Google Container Registry, and deploy it to GKE when a release is created
 #
 # To configure this workflow:
