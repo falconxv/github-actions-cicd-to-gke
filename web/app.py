@@ -6,8 +6,9 @@
 # 1.0          17-Mar-2021    Initial Version
 #
 # ----------------------------------------------
-from flask import Flask, request, render_template
+from flask import Flask, render_template
 import random
+import socket
 
 application = Flask(__name__)
 
@@ -26,8 +27,9 @@ images = [
 @application.route("/")
 def index():
     url = random.choice(images)
-    host = request.host
-    return render_template("index.html", url=url, host=host)
+    host = socket.gethostname()
+    ip = socket.gethostbyname(host)
+    return render_template("index.html", url=url, host=host, ip=ip )
 
 @application.route("/about")
 def aboutpage():
