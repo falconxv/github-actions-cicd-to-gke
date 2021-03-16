@@ -8,6 +8,14 @@
 # ----------------------------------------------
 from flask import Flask, render_template
 import random
+import socket
+
+hostname = socket.gethostname()
+
+ip_address = socket.gethostbyname(hostname)
+
+print(f"Hostname: {hostname}")
+print(f"IP Address: {ip_address}"
 
 application = Flask(__name__)
 
@@ -26,7 +34,9 @@ images = [
 @application.route("/")
 def index():
     url = random.choice(images)
-    return render_template("index.html", url=url)
+    hostname = socket.gethostname()
+    ip_address = socket.gethostbyname(hostname)
+    return render_template("index.html", url=url, hostname=hostname, ip_address=ip_address)
 
 @application.route("/about")
 def aboutpage():
