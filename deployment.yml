@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: falcon-project-deployment-autoscaling
+  labels:
+    app  : falcon-k8s-application 
+spec:
+  selector:
+    matchLabels:
+      project: falcon-project-autoscaling
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        project: falkon-project-autoscaling
+    spec:
+      containers:
+        - name : falkon-project-webapp-autoscaling
+          image: gcr.io/PROJECT_ID/IMAGE:TAG
+          ports:
+            - containerPort: 80
+            
+          
+---
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: falcon-autoscaling-pod
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v2beta2v2
+    kind: Deployment
+    name: falkon-project-deployment-autoscaling
+  minReplicas: 2
+  maxReplicas: 6
+  metrics:
+  - type: Resource
+    resource: 
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target: 
+        type: Utilization
+        averageUtilization: 80
+        
