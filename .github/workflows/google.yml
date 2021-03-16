@@ -34,8 +34,8 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: falcon-final-project
-  GKE_ZONE: us-west1-c      
+  GKE_CLUSTER: falcon
+  GKE_ZONE: us-west1-a      
   DEPLOYMENT_NAME: final-project-deployment 
   IMAGE: web-app
 
