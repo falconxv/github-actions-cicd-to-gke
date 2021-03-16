@@ -1,6 +1,24 @@
 <HTML>
-<HEAD>
+
+<head>
+ <style type="text/css">
+  body {
+   background: black;
+   color: white;
+  }
+  div.container {
+   max-width: 700px;
+   margin: 50px auto;
+   border: 10px solid white;
+   padding: 10px;
+   text-align: center;
+  }
+ </style>
+ </head>
+
 <TITLE>WebApp</TITLE>
+
+
 <SCRIPT LANGUAGE="JavaScript">
       var sizes = new Array(0,1,2,4,8,10,12);
       sizes.pos = 0;
@@ -14,14 +32,17 @@ function Elastic()
     el.style.letterSpacing = sizes[sizes.pos += el.direction]
 setTimeout('Elastic()',100)
 }
-
 </SCRIPT>
-<BODY  bgcolor=silver  onLoad=Elastic()>
+
+<BODY onLoad=Elastic()>
 <CENTER>
 <font color="white"><h2>Hello from <font color="yellow">Sergii Sokolov!</font><br>
 Welcome to Python Flask Web Page!
-<font color="red"><H1 ID="elastic" ALIGN="Center">GitHub Actions is Cool!</H1>
-<br>
+<font color="red"><h1 ID="elastic" ALIGN="Center">GitHub Actions is Cool!</h1>
+
+
+<div class="container"> <img src="{{url}}" /> </div>
+
 
 </body>
 </HTML>
