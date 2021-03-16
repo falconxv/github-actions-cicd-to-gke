@@ -16,10 +16,10 @@ spec:
   template:
     metadata:
       labels:
-        project: falkon-project
+        project: falcon-project
     spec:
       containers:
-        - name : falkon-project-webapp
+        - name : falcon-project-webapp
           image: gcr.io/PROJECT_ID/IMAGE:TAG
           ports:
             - containerPort: 80
@@ -38,7 +38,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v2beta2v2
     kind: Deployment
-    name: falkon-project-deployment
+    name: falcon-project-deployment
   minReplicas: 2
   maxReplicas: 6
   metrics:
