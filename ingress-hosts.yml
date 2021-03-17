@@ -21,9 +21,9 @@ spec:
           serviceName: httpd
           servicePort: 80
 
-  - host: web2.falcon.tonguru.com
+  - host: nginx.falcon.tonguru.com
     http:
       paths:
       - backend:
-          serviceName: falcon-webapp-service
+          serviceName: nginx
           servicePort: 80
