@@ -4,7 +4,7 @@ metadata:
   name: ingress-hosts
   namespace: staging
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: "falcon-cluster"
+    kubernetes.io/ingress.global-static-ip-name: falcon-cluster
 spec:
   rules:
   - host: falcon.tonguru.com
