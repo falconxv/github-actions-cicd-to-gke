@@ -12,7 +12,7 @@ spec:
       paths:
       - path: /
         pathType: Prefix
-      - backend:
+        backend:
           serviceName: falcon-webapp-service
           servicePort: 80
 
