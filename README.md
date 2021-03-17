@@ -1,4 +1,4 @@
-## Setup, Build, Publish and Deploy Web App to Google Kubernetes Engine using GitHub Actions
+### Setup, Build, Publish and Deploy Web App to Google Kubernetes Engine using GitHub Actions
 
 
 Status of Last Deployment:<br>
