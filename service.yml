@@ -9,9 +9,15 @@ metadata:
 spec:
   selector:
     project: falcon-project
-  ports:
-    - name      : app-listener
-      protocol  : TCP
-      port      : 80  # ClusterIP
-      targetPort: 80  # Pod
+#   ports:
+#     - name      : app-listener
+#       protocol  : TCP
+#       port      : 80  
+#       targetPort: 80  
+    
   type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  
