@@ -4,7 +4,7 @@ metadata:
   name: ingress-hosts
   namespace: staging
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: falcon-cluster
+    kubernetes.io/ingress.global-static-ip-name: "falcon-cluster"
 spec:
   rules:
   - host: falcon.tonguru.com
@@ -14,24 +14,16 @@ spec:
           serviceName: falcon-webapp-service
           servicePort: 80
 
-#   - host: web1.falcon.tonguru.com
-#     http:
-#       paths:
-#       - path: /
-#         pathType: Prefix
-#         backend:
-#           service:
-#             name: falcon-webapp-service
-#             port:
-#               number: 80
+  - host: web1.falcon.tonguru.com
+    http:
+      paths:
+      - backend:
+          serviceName: falcon-webapp-service
+          servicePort: 80
 
-#   - host: web2.falcon.tonguru.com
-#     http:
-#       paths:
-#       - path: /
-#         pathType: Prefix
-#         backend:
-#           service:
-#             name: falcon-webapp-service
-#             port:
-#               number: 80
+  - host: web2.falcon.tonguru.com
+    http:
+      paths:
+      - backend:
+          serviceName: falcon-webapp-service
+          servicePort: 800
