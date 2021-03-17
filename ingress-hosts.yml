@@ -26,4 +26,4 @@ spec:
       paths:
       - backend:
           serviceName: falcon-webapp-service
-          servicePort: 800
+          servicePort: 80
