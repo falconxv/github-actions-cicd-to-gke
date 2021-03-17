@@ -1,9 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: falcon-project-deployment
+  name     : falcon-project-deployment
+  namespace: staging
   labels:
-    app  : falcon-k8s-application 
+    app : falcon-k8s-application 
 spec:
   selector:
     matchLabels:
@@ -35,7 +36,8 @@ spec:
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: falcon-autoscaling-pod
+  name     : falcon-autoscaling-pod
+  namespace: staging
 spec:
   scaleTargetRef:
     apiVersion: apps/v2beta2v2
