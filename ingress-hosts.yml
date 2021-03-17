@@ -16,7 +16,7 @@ spec:
           serviceName: falcon-webapp-service
           servicePort: 80
 
-  - host: about.falcon.tonguru.com
+  - host: falcon.tonguru.com/about
     http:
       paths:
       - path: /about
