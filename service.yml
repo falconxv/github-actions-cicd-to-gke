@@ -12,6 +12,6 @@ spec:
   ports:
     - name      : app-listener
       protocol  : TCP
-      port      : 80  # Load Balancer
+      port      : 80  # ClusterIP
       targetPort: 80  # Pod
-  type: LoadBalancer
+  type: ClusterIP
