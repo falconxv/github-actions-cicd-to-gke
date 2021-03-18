@@ -18,7 +18,7 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: falcon-webapp-service
+          serviceName: cm-acme-http-solver-p795w
           servicePort: 80
   
 #   - host: httpd.falcon.tonguru.com
