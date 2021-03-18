@@ -23,12 +23,12 @@ spec:
         path: /.well-known/acme-challenge/qKffNIA0Xbo_Nk4uLsfRDIADwG7FCOvaQosUDn0rX8I
         pathType: ImplementationSpecific
         
-  - host: falcon.tonguru.com
-    http:
-      paths:
-      - backend:
-          serviceName: falcon-webapp-service
-          servicePort: 80
+#   - host: falcon.tonguru.com
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: falcon-webapp-service
+#           servicePort: 80
    
 #   - host: httpd.falcon.tonguru.com
 #     http:
