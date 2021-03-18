@@ -20,8 +20,8 @@ spec:
       - backend:
           serviceName: cm-acme-http-solver-qhxq9
           servicePort: 8089
-        path: /.well-known/acme-challenge/qKffNIA0Xbo_Nk4uLsfRDIADwG7FCOvaQosUDn0rX8I
-        pathType: ImplementationSpecific
+#         path: /.well-known/acme-challenge/qKffNIA0Xbo_Nk4uLsfRDIADwG7FCOvaQosUDn0rX8I
+#         pathType: ImplementationSpecific
         
 #   - host: falcon.tonguru.com
 #     http:
