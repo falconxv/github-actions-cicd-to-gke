@@ -18,7 +18,7 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: cm-acme-http-solver-qhxq9
+          serviceName: cm-acme-http-solver-6ddns
           servicePort: 8089
 #         path: /.well-known/acme-challenge/qKffNIA0Xbo_Nk4uLsfRDIADwG7FCOvaQosUDn0rX8I
 #         pathType: ImplementationSpecific
