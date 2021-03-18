@@ -17,6 +17,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: letsencrypt
+  namespace: staging
 spec:
   acme:
     email: forfalcon@protonmail.com
@@ -32,6 +33,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: le-crt
+  namespace: staging
 spec:
   secretName: tls-secret
   issuerRef:
