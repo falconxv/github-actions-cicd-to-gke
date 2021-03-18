@@ -5,4 +5,4 @@ resources:
 - deployment.yml
 - service.yml
 - ingress-hosts.yml
-- clusterissuer.yml
+- issuer.yml
