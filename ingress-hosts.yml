@@ -14,6 +14,10 @@ spec:
       - backend:
           serviceName: falcon-webapp-service
           servicePort: 80
+  tls:
+  - hosts:
+    - falcon.tonguru.com
+    secretName: socks-tls-2
 
   - host: httpd.falcon.tonguru.com
     http:
