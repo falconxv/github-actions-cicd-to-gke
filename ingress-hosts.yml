@@ -9,6 +9,10 @@ metadata:
     cert-manager.io/issue-temporary-certificate: "true"
     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
+  tls:
+  - hosts:
+    - "falcon.tonguru.com"
+    secretName: tls-secret
   rules:
   - host: falcon.tonguru.com
     http:
