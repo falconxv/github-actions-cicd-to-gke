@@ -30,8 +30,4 @@ spec:
       - backend:
           serviceName: nginx
           servicePort: 80
-          
-  tls:
-  - hosts:
-    - falcon.tonguru.com
-    secretName: socks-tls-2
+  
