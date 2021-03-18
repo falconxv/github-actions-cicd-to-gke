@@ -1,12 +1,12 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: ingress-hosts
+  name: falcon-ingress
   namespace: staging
   annotations:
     kubernetes.io/ingress.global-static-ip-name: "falcon-cluster-ip" 
-    cert-manager.io/cluster-issuer: "letsencrypt-staging"
-#   cert-manager.io/issue-temporary-certificate: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt"
+    cert-manager.io/issue-temporary-certificate: "true"
     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   tls:
@@ -21,17 +21,17 @@ spec:
           serviceName: falcon-webapp-service
           servicePort: 80
   
-  - host: httpd.falcon.tonguru.com
-    http:
-      paths:
-      - backend:
-          serviceName: httpd
-          servicePort: 80
+#   - host: httpd.falcon.tonguru.com
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: httpd
+#           servicePort: 80
   
-  - host: nginx.falcon.tonguru.com
-    http:
-      paths:
-      - backend:
-          serviceName: nginx
-          servicePort: 80
+#   - host: nginx.falcon.tonguru.com
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: nginx
+#           servicePort: 80
   
