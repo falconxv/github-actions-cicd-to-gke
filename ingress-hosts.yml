@@ -6,7 +6,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name: "falcon-cluster-ip" 
     cert-manager.io/cluster-issuer: "letsencrypt-staging"
-    #cert-manager.io/issue-temporary-certificate: "true"
+    cert-manager.io/issue-temporary-certificate: "true"
     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   tls:
@@ -19,7 +19,9 @@ spec:
       paths:
       - backend:
           serviceName: cm-acme-http-solver-p795w
-          servicePort: 80
+          servicePort: 8089
+        path: /.well-known/acme-challenge/4PAw0Uz50Tf-2Z-NhbkIqCYXPD3sebALjBTLYiEeBiY
+        pathType: ImplementationSpecific
   
 #   - host: httpd.falcon.tonguru.com
 #     http:
