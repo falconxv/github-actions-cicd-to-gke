@@ -35,10 +35,10 @@ spec:
           serviceName: phpmyadmin
           servicePort: 80
           
-  - host: wordpress.falcon.tonguru.com
+  - host: nginx.falcon.tonguru.com
     http:
       paths:
       - backend:
-          serviceName: wordpress
+          serviceName: nginx
           servicePort: 80
           
