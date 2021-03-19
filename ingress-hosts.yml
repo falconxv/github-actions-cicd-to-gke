@@ -14,21 +14,21 @@ spec:
     - "falcon.tonguru.com"
     secretName: tls-secret
   rules:
-  - host: falcon.tonguru.com
-    http:
-      paths:
-      - backend:
-          serviceName: cm-acme-http-solver-sxsnk
-          servicePort: 8089
-#         path: /.well-known/acme-challenge/qKffNIA0Xbo_Nk4uLsfRDIADwG7FCOvaQosUDn0rX8I
-#         pathType: ImplementationSpecific
-        
 #   - host: falcon.tonguru.com
 #     http:
 #       paths:
 #       - backend:
-#           serviceName: falcon-webapp-service
-#           servicePort: 80
+#           serviceName: cm-acme-http-solver-sxsnk
+#           servicePort: 8089
+#         path: /.well-known/acme-challenge/qKffNIA0Xbo_Nk4uLsfRDIADwG7FCOvaQosUDn0rX8I
+#         pathType: ImplementationSpecific
+        
+  - host: falcon.tonguru.com
+    http:
+      paths:
+      - backend:
+          serviceName: falcon-webapp-service
+          servicePort: 80
   
 #   - host: httpd.falcon.tonguru.com
 #     http:
