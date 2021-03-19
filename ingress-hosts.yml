@@ -5,30 +5,30 @@ metadata:
   namespace: staging
   annotations:
     kubernetes.io/ingress.global-static-ip-name: "falcon-cluster-ip"
-#     cert-manager.io/cluster-issuer: "letsencrypt"
-#     cert-manager.io/issue-temporary-certificate: "true"
-#     acme.cert-manager.io/http01-edit-in-place: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt"
+    cert-manager.io/issue-temporary-certificate: "true"
+    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
-#   tls:
-#   - hosts:
-#     - "falcon.tonguru.com"
-#     secretName: tls-secret
+  tls:
+  - hosts:
+    - "falcon.tonguru.com"
+    secretName: tls-secret
   rules:
+  - host: falcon.tonguru.com
+    http:
+      paths:
+      - backend:
+          serviceName: cm-acme-http-solver-sxsnk
+          servicePort: 8089
+#         path: /.well-known/acme-challenge/qKffNIA0Xbo_Nk4uLsfRDIADwG7FCOvaQosUDn0rX8I
+#         pathType: ImplementationSpecific
+        
 #   - host: falcon.tonguru.com
 #     http:
 #       paths:
 #       - backend:
 #           serviceName: falcon-webapp-service
 #           servicePort: 80
-#         path: /.well-known/acme-challenge/qKffNIA0Xbo_Nk4uLsfRDIADwG7FCOvaQosUDn0rX8I
-#         pathType: ImplementationSpecific
-        
-  - host: falcon.tonguru.com
-    http:
-      paths:
-      - backend:
-          serviceName: falcon-webapp-service
-          servicePort: 80
   
 #   - host: httpd.falcon.tonguru.com
 #     http:
