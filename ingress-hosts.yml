@@ -32,6 +32,6 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: bitnami-nginx
+          serviceName: wordpress
           servicePort: 80
          
