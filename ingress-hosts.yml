@@ -30,12 +30,12 @@ spec:
           serviceName: falcon-webapp-service
           servicePort: 80
   
-#   - host: httpd.falcon.tonguru.com
-#     http:
-#       paths:
-#       - backend:
-#           serviceName: httpd
-#           servicePort: 80
+  - host: tomcat.falcon.tonguru.com
+    http:
+      paths:
+      - backend:
+          serviceName: tomcat
+          servicePort: 80
   
 #   - host: nginx.falcon.tonguru.com
 #     http:
