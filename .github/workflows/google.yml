@@ -11,9 +11,9 @@ name: CICD-Pipeline-to-GKE
 
 on:
   push:
-    branches: [ main ]
+    branches: [ mains ]
   pull_request:
-    branches: [ main ]
+    branches: [ mains ]
 
 env:
   PROJECT_ID     : ${{ secrets.GKE_PROJECT }}
