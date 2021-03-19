@@ -28,14 +28,14 @@ spec:
           serviceName: tomcat
           servicePort: 8080
     
-  - host: phpmyadmin.falcon.tonguru.com
+  - host: pma.falcon.tonguru.com
     http:
       paths:
       - backend:
           serviceName: phpmyadmin
           servicePort: 80
           
-  - host: nginx.falcon.tonguru.com
+  - host: ngx.falcon.tonguru.com
     http:
       paths:
       - backend:
