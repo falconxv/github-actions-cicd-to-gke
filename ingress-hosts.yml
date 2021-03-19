@@ -28,10 +28,10 @@ spec:
           serviceName: tomcat
           servicePort: 8080
     
-  - host: nginx.falcon.tonguru.com
+  - host: phpmyadmin.falcon.tonguru.com
     http:
       paths:
       - backend:
-          serviceName: wordpress
+          serviceName: phpmyadmin
           servicePort: 80
          
