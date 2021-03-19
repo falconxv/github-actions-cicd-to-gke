@@ -34,4 +34,11 @@ spec:
       - backend:
           serviceName: phpmyadmin
           servicePort: 80
-         
+          
+  - host: wordpress.falcon.tonguru.com
+    http:
+      paths:
+      - backend:
+          serviceName: wordpress
+          servicePort: 80
+          
