@@ -28,7 +28,7 @@ spec:
       paths:
       - backend:
           serviceName: falcon-webapp-service
-          servicePort: 80
+          servicePort: 8080
   
   - host: tomcat.falcon.tonguru.com
     http:
