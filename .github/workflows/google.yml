@@ -27,7 +27,7 @@ jobs:
   setup-build-publish-deploy:
     name       : Setup, Build, Publish, and Deploy
     runs-on    : ubuntu-latest
-    environment: production
+    environment: staging
 
     steps:
     - name: Checkout
@@ -77,4 +77,4 @@ jobs:
         ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
         ./kustomize build . | kubectl apply -f -
         kubectl rollout status deployment/$DEPLOYMENT_NAME -n $NAMESPACES
-        kubectl get services -o wide
+        kubectl get services -o wide -n $NAMESPACES
