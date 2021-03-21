@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name : falcon-project-webapp
-          image: falkonz/web-app:v1
+          image: gcr.io/PROJECT_ID/IMAGE:TAG
           ports:
             - containerPort: 80
           resources:
