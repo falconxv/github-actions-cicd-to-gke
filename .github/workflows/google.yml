@@ -1,0 +1,80 @@
+#---------------------------------------------------------------------
+# GitHub Action workflow to deploy WebApp to GKE
+#
+# Version      Date        Info
+# 1.0          2021        Initial Version
+#
+# Made by Sergii Sokolov Copyleft (c) 2021
+#---------------------------------------------------------------------
+
+name: CICD-Pipeline-to-GKE
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  PROJECT_ID     : ${{ secrets.GKE_PROJECT }}
+  GKE_CLUSTER    : falcon
+  GKE_ZONE       : us-west1-a
+  NAMESPACES     : staging
+  DEPLOYMENT_NAME: falcon-project-deployment
+  IMAGE          : web-app
+
+jobs:
+  setup-build-publish-deploy:
+    name       : Setup, Build, Publish, and Deploy
+    runs-on    : ubuntu-latest
+    environment: staging
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    # Setup gcloud CLI
+    - uses: google-github-actions/setup-gcloud@v0.2.0
+      with:
+        service_account_key: ${{ secrets.GKE_SA_KEY }}
+        project_id         : ${{ secrets.GKE_PROJECT }}
+
+    # Configure Docker to use the gcloud command-line tool as a credential
+    # helper for authentication
+    - run: |-
+        gcloud --quiet auth configure-docker
+
+    # Get the GKE credentials so we can deploy to the cluster
+    - uses: google-github-actions/get-gke-credentials@v0.2.1
+      with:
+        cluster_name: ${{ env.GKE_CLUSTER }}
+        location    : ${{ env.GKE_ZONE }}
+        credentials : ${{ secrets.GKE_SA_KEY }}
+
+    # Build the Docker image
+    - name: Build
+      run : |-
+        docker build \
+          --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
+          --build-arg GITHUB_SHA="$GITHUB_SHA" \
+          --build-arg GITHUB_REF="$GITHUB_REF" \
+          .
+
+    # Push the Docker image to Google Container Registry
+    - name: Publish
+      run : |-
+        docker push "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
+
+    # Set up kustomize
+    - name: Set up Kustomize
+      run : |-
+        curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
+        chmod u+x ./kustomize
+
+    # Deploy the Docker image to the GKE cluster
+    - name: Deploy
+      run : |-
+        ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
+        ./kustomize build . | kubectl apply -f -
+        kubectl rollout status deployment/$DEPLOYMENT_NAME -n $NAMESPACES
+        kubectl get services -o wide -n $NAMESPACES
