@@ -1,5 +1,5 @@
 # ------------------------------------------------
-# Program by Sergii Sokolov
+# Program by Sergii K.
 #
 #
 # Version      Date           Info
