@@ -1,9 +1,9 @@
-### Setup, Build, Publish and Deploy Web App to Google Kubernetes Engine using GitHub Actions
+### Building a CI/CD pipeline with GitHub Actions to deploy Python project on a Google Kubernetes Engine cluster
 
 Status of Last Deployment:<br>
 [![CICD-Pipeline-to-GKE](https://github.com/falkonz/github-actions-cicd-to-gke/actions/workflows/google.yml/badge.svg)](https://github.com/falkonz/github-actions-cicd-to-gke/actions/workflows/google.yml)
 
-Copyleft by Sergii Sokolov 2021.
+Copyleft by Sergii K. 2021.
 
 <table>
 <tbody>
@@ -18,10 +18,6 @@ Copyleft by Sergii Sokolov 2021.
 	<tr>
 		<th>PhpMyAdmin</th>
 		<td>http://phpmyadmin.falcon.tonguru.com</td>
-  </tr>
-	<tr>
-		<th>Tomcat</th>
-		<td>http://tomcat.falcon.tonguru.com</td>
   </tr>
 </tbody>
 </table>
