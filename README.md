@@ -1,4 +1,4 @@
-### Building a CI/CD pipeline with GitHub Actions to deploy Python project on a Google Kubernetes Engine cluster
+### CI/CD pipeline with GitHub Actions and Google Kubernetes Engine
 
 Status of Last Deployment:<br>
 [![CICD-Pipeline-to-GKE](https://github.com/falkonxv/github-actions-cicd-to-gke/actions/workflows/google.yml/badge.svg)](https://github.com/falkonxv/github-actions-cicd-to-gke/actions/workflows/google.yml)
