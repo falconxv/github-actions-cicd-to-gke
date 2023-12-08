@@ -1,7 +1,7 @@
 ### Building a CI/CD pipeline with GitHub Actions to deploy Python project on a Google Kubernetes Engine cluster
 
 Status of Last Deployment:<br>
-[![CICD-Pipeline-to-GKE](https://github.com/falkonz/github-actions-cicd-to-gke/actions/workflows/google.yml/badge.svg)](https://github.com/falkonz/github-actions-cicd-to-gke/actions/workflows/google.yml)
+[![CICD-Pipeline-to-GKE](https://github.com/falkonxv/github-actions-cicd-to-gke/actions/workflows/google.yml/badge.svg)](https://github.com/falkonxv/github-actions-cicd-to-gke/actions/workflows/google.yml)
 
 Copyleft by Sergii K. 2021.
 
@@ -9,15 +9,15 @@ Copyleft by Sergii K. 2021.
 <tbody>
 	<tr>
 		<th>My WebApp</th>
-		<td>https://falcon.tonguru.com</td>
+		<td></td>
 	</tr>
   <tr>
 		<th>About</th>
-		<td>https://falcon.tonguru.com/about</td>
+		<td></td>
 	</tr>
 	<tr>
 		<th>PhpMyAdmin</th>
-		<td>http://phpmyadmin.falcon.tonguru.com</td>
+		<td></td>
   </tr>
 </tbody>
 </table>
